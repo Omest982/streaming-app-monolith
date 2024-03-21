@@ -14,5 +14,9 @@ spring:
 server:
   port: ${APPLICATION_PORT}
 
+jwt:
+  secret: CRClPakWbPafJH12umy4hdV4MNNeutKv62UjIsg278Uh4nfj7sfhefHUFIWAyhfisfs83h23qwr29r32r
+  expiration: 6000000
+
 
 
