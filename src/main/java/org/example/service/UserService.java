@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.dto.UserResponseDto;
 import org.example.entity.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -10,4 +11,5 @@ public interface UserService extends UserDetailsService {
     User getUserByUsername(String username);
     boolean isUserExistsByUsernameOrEmail(String username, String email);
     UUID saveUser(User user);
+    UserResponseDto getCurrentUser();
 }

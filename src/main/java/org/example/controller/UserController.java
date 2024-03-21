@@ -25,8 +25,8 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public UserResponseDto getCurrentUser(@RequestHeader("Authorization") String bearerToken){
-        return null;
+    public UserResponseDto getCurrentUser(){
+        return userService.getCurrentUser();
     }
 
     @PostMapping

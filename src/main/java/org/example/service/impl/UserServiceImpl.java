@@ -2,9 +2,12 @@ package org.example.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.example.dto.UserResponseDto;
 import org.example.entity.User;
 import org.example.repository.UserRepository;
 import org.example.service.UserService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -38,6 +41,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public UUID saveUser(User user) {
         return userRepository.save(user).getId();
+    }
+
+    @Override
+    public UserResponseDto getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+        return UserResponseDto.builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .avatarUrl(user.getAvatarUrl())
+                .build();
     }
 
     @Override
