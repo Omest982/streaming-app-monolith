@@ -3,6 +3,8 @@ package org.example.service.impl;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.UserResponseDto;
+import org.example.dto.UserUpdateDto;
+import org.example.entity.Follow;
 import org.example.entity.User;
 import org.example.repository.UserRepository;
 import org.example.service.UserService;
@@ -34,6 +36,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UUID updateUser(UserUpdateDto userUpdateDto, UUID userId) {
+        User user = getUserById(userId);
+        user.setServerUrl(userUpdateDto.getServerUrl());
+        user.setIngressId(userUpdateDto.getIngressId());
+        user.setStreamKey(userUpdateDto.getStreamKey());
+
+        return saveUser(user);
+    }
+
+    @Override
     public boolean isUserExistsByUsernameOrEmail(String username, String email) {
         return userRepository.existsByUsernameOrEmail(username, email);
     }
@@ -44,9 +56,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto getCurrentUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User) authentication.getPrincipal();
+    public UserResponseDto getCurrentUserProfileInfo() {
+        User user = getCurrentUser();
         return UserResponseDto.builder()
                 .id(user.getId())
                 .username(user.getUsername())
@@ -57,5 +68,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return getUserByUsername(username);
+    }
+
+    @Override
+    public User getCurrentUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return (User) authentication.getPrincipal();
     }
 }

@@ -37,7 +37,6 @@ public class User implements UserDetails {
     @Enumerated(value = EnumType.STRING)
     private UserRole userRole;
     private String thumbnaiUrl;
-
     @OneToOne
     private UserStream userStream;
     @OneToMany(cascade = CascadeType.REMOVE)
