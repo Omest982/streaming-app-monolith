@@ -16,6 +16,7 @@ services:
     container_name: streaming-app
     depends_on:
       - streaming-app-db
+      - swagger-ui
     restart: on-failure
     image: streaming-app
     build: .
@@ -28,3 +29,12 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=streaming-app-db
       - DB_PORT=${DB_PORT}
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./swagger:/docs
+    restart: always
+    environment:
+      - SWAGGER_JSON=/docs/swagger.yml
+    container_name: swagger-ui
