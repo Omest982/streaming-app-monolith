@@ -1,6 +1,15 @@
 version: "3.9"
 
 services:
+  livekit:
+    image: livekit/livekit-server:v1.5.3 # Use the latest version
+    ports:
+      - "7880:7880" # HTTP port
+      - "7881:7881" # WebSocket port
+      - "7882:7882" # RTP/RTCP port range (UDP)
+    environment:
+      LIVEKIT_KEYS: ${LIVE_KIT_API_KEY}:${LIVE_KIT_SECRET_KEY}
+    command: [ "--dev", "--node-ip=0.0.0.0" ]
   streaming-app-db:
     container_name: streaming-app-db
     image: postgres:16.1

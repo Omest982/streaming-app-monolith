@@ -6,14 +6,17 @@ import org.example.dto.UserResponseDto;
 import org.example.dto.UserUpdateDto;
 import org.example.entity.Follow;
 import org.example.entity.User;
+import org.example.mapper.UserMapper;
 import org.example.repository.UserRepository;
 import org.example.service.UserService;
+import org.example.utils.LiveKitTest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Service
@@ -21,6 +24,8 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final LiveKitTest liveKitTest;
+    private final UserMapper userMapper;
     @Override
     public User getUserById(UUID userId) {
         return userRepository.findById(userId)
@@ -52,17 +57,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UUID saveUser(User user) {
+        try {
+            liveKitTest.setupConnection();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return userRepository.save(user).getId();
     }
 
     @Override
     public UserResponseDto getCurrentUserProfileInfo() {
         User user = getCurrentUser();
-        return UserResponseDto.builder()
-                .id(user.getId())
-                .username(user.getUsername())
-                .avatarUrl(user.getAvatarUrl())
-                .build();
+        return userMapper.userToUserResponseDto(user);
     }
 
     @Override
