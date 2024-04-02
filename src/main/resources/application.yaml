@@ -21,7 +21,11 @@ jwt:
 livekit:
   secret-key: ${LIVE_KIT_SECRET_KEY}
   api-key: ${LIVE_KIT_API_KEY}
-  host-http: http://${LIVE_KIT_HOST}:${LIVE_KIT_HTTP_PORT}
+  host-http: ${LIVE_KIT_HOST_HTTP_LOCAL}
 
-
-
+webhook:
+  # the API key to use in order to sign the message
+  # this must match one of the keys LiveKit is configured with
+  api_key: ${LIVE_KIT_API_KEY}
+  urls:
+    - 'http://localhost:8080/stream/webhook'
