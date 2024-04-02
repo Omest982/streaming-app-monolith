@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e026be08-8eb9-4f27-9a43-ac0daa856767" name="Changes" comment="Configured livekit server.">
+    <list default="true" id="e026be08-8eb9-4f27-9a43-ac0daa856767" name="Changes" comment="Configuring webhook endpoints.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/StreamingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StreamingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712078883581</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Configuring webhook endpoints.">
+      <option name="closed" value="true" />
+      <created>1712081026137</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712081026137</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -210,6 +218,7 @@
     <MESSAGE value="Added swagger-ui to docker." />
     <MESSAGE value="Added livekit server to docker.&#10;Added new not completed business logic." />
     <MESSAGE value="Configured livekit server." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured livekit server." />
+    <MESSAGE value="Configuring webhook endpoints." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring webhook endpoints." />
   </component>
 </project>

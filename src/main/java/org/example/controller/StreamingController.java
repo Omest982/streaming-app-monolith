@@ -26,6 +26,7 @@ public class StreamingController {
         return streamingService.getAccessToken(roomName);
     }
 
+    @Operation(summary = "Create room", description = "Creates room with specific name")
     @GetMapping("/room/{roomName}")
     public String getRoom(@PathVariable String roomName) throws IOException {
         return streamingService.getRoom(roomName);
