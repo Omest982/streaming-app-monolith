@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e026be08-8eb9-4f27-9a43-ac0daa856767" name="Changes" comment="Added swagger-ui to docker.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/config/StreamingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/StreamingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/StreamingInfoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/StreamingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/StreamingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/LiveKitTest.java" afterDir="false" />
+    <list default="true" id="e026be08-8eb9-4f27-9a43-ac0daa856767" name="Changes" comment="Added livekit server to docker.&#10;Added new not completed business logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +37,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.StreamingAppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.streaming-app-monolith [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.streaming-app-monolith [install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -187,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711370529912</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added livekit server to docker.&#10;Added new not completed business logic.">
+      <option name="closed" value="true" />
+      <created>1712003188060</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712003188060</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,6 +199,7 @@
     <MESSAGE value="Added docker." />
     <MESSAGE value="Added endpoint and logic for it." />
     <MESSAGE value="Added swagger-ui to docker." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added swagger-ui to docker." />
+    <MESSAGE value="Added livekit server to docker.&#10;Added new not completed business logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added livekit server to docker.&#10;Added new not completed business logic." />
   </component>
 </project>
